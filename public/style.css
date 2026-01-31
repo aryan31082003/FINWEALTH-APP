@@ -1,0 +1,238 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --primary-blue: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg-light: #f8fafc;
+    --sidebar-bg: #1e293b;
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --white: #ffffff;
+    --border-color: #e2e8f0;
+    --success: #10b981;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-main);
+}
+
+/* --- Navigation --- */
+.top-nav {
+    height: 60px;
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-left a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-left a:hover {
+    color: var(--primary-blue);
+}
+
+.nav-right button {
+    background: rgb(242, 171, 171);
+    border: 1px solid black;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.nav-right button:hover {
+    background: #fff1f1;
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+/* --- Layout Structure --- */
+.main-container {
+    display: flex;
+    margin-top: 60px; 
+}
+
+/* --- Fixed Sidebar --- */
+.sidebar {
+    width: 260px;
+    background: var(--sidebar-bg);
+    color: var(--white);
+    height: calc(100vh - 60px);
+    position: fixed;                                                                       /* Keeping sidebar stationary */
+    left: 0;
+    padding: 2rem 1.5rem;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s;
+}
+
+.sidebar button:hover {
+    background: var(--primary-blue);
+}
+
+/* --- Main Content Area --- */
+.content {
+    flex: 1;
+    margin-left: 300px; 
+    padding: 2rem;
+    max-width: 1200px;
+}
+
+/* --- Forms & Inputs --- */
+.form-container, .filters {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+input, select {
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    flex: 1;
+    min-width: 150px;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.form-container button {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* --- Summary Cards --- */
+.totals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.total-card {
+    background: var(--white);
+    height: 80px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--primary-blue);
+}
+
+.total-card:last-child {
+    border-left-color: var(--danger);
+}
+
+.total-card h3 {
+    margin-top: -12px;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    margin-bottom: 0.5rem;
+}
+
+.total-card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* --- Table Styles --- */
+#records-table {
+    width: 100%;
+    background: var(--white);
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#records-table th {
+    background: #f1f5f9;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+#records-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+#records-table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* --- Action Buttons in Table --- */
+.delete-btn { 
+    color: var(--danger);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Income & Expense Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            background: #0f172a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .chart-box {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: #020617;
+            padding: 20px;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center;">Financial Overview</h1>
+
+    <div class="chart-box">
+        <h2>Salary vs Date</h2>
+        <canvas id="incomeChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+        <h2>Expense vs Date</h2>
+        <canvas id="expenseChart"></canvas>
+    </div>
+
+<script src="charts.js"></script>
+</body>
+</html>

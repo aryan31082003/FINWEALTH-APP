@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard | Finance Manager</title>
+</head>
+
+<body>
+    <nav class="top-nav">
+        <div class="nav-left">
+            <a href="about.html" target="_blank" rel="noopener noreferrer">
+                <button style="background-color: rgb(192, 192, 245); height: 30px; width: 60px; border-radius: 5px; font-size:15px;font-weight: bold;">About</button>
+            </a>
+        </div>
+        <h2>WELCOME TO FINWEALTH</h2>
+        <div class="nav-right">
+            <button onclick="logout()">Logout</button>
+        </div>
+    </nav>
+
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <img id="profile-img" src="default-avatar.png" alt="Profile">
+                <input type="file" id="img-input" accept="image/*" hidden>
+                <h3 id="display-username">Username</h3>
+                <button onclick="document.getElementById('img-input').click()">Upload Photo</button>
+                <button onclick="openCharts()">View Charts</button>
+
+            </div>
+        </aside>
+
+        <main class="content">
+            <section class="form-container">
+                <input type="text" id="category" placeholder="Category">
+                <input type="number" id="amount" placeholder="Amount">
+                <select id="status">
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                </select>
+                <input type="date" id="date">
+                <button onclick="addRecord()">Add Record</button>
+            </section>
+
+            <section class="filters">
+                <input type="text" id="search" placeholder="Search by category/status..." oninput="fetchRecords()">
+                <select id="sortBy" onchange="fetchRecords()">
+                    <option value="date">Sort by Date</option>
+                    <option value="amount">Sort by Amount</option>
+                </select>
+            </section>
+
+            <section class="totals">
+                <div class="total-card">
+                    <h3>Total Salary</h3>
+                    <p id="total-salary">$0</p>
+                </div>
+                <div class="total-card">
+                    <h3>Total Expense</h3>
+                    <p id="total-expense">$0</p>
+                </div>
+            </section>
+
+            <table id="records-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

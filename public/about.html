@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | Finance Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #22c55e;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: radial-gradient(circle at top, #1e293b, var(--bg-dark));
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 4rem 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            color: var(--primary);
+        }
+
+        .card p {
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            background: #020617;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #1e293b;
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer span {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="hero">
+            <h1>Finance Manager</h1>
+            <p>Track smarter. Spend wiser. Grow stronger.</p>
+        </div>
+
+        <div class="card">
+            <h2>What is Finance Manager?</h2>
+            <p>
+                Finance Manager is a personal finance tracking application designed to help users
+                record income and expenses, analyze spending patterns, and maintain financial discipline.
+                It provides a clean, distraction-free interface with secure authentication and
+                real-time data management.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Core Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>🔐 Secure Login</h3>
+                    <p>JWT-based authentication to keep your financial data private.</p>
+                </div>
+                <div class="feature">
+                    <h3>💰 Income & Expenses</h3>
+                    <p>Easily add, view, and delete income and expense records.</p>
+                </div>
+                <div class="feature">
+                    <h3>🔍 Smart Search</h3>
+                    <p>Filter and sort records by category, date, or amount.</p>
+                </div>
+                <div class="feature">
+                    <h3>🖼 Profile Personalization</h3>
+                    <p>Upload a profile picture saved securely on the server.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Built With</h2>
+            <p>
+                This application is built using modern web technologies including
+                <strong>HTML, CSS, JavaScript</strong> for the frontend and
+                <strong>Node.js, Express, MongoDB</strong> for the backend.
+                The architecture follows real-world best practices for scalability and security.
+            </p>
+        </div>
+
+        <div class="footer">
+            © 2026 <span>Finance Manager</span>. All rights reserved.
+        </div>
+
+    </div>
+
+</body>
+</html>
