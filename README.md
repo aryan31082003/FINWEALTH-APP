@@ -2,7 +2,7 @@
 Finwealth desktop web application - Manages financial information along presenting data with visual graphs
 
 # TECH STACK
-HTML - For frontend structures
+-- HTML - For frontend structures
 CSS - for styling
 Javascript - to handle client and server side logic as well as for graphical presentation
 Node js - To handle backend
